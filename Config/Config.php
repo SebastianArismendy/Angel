@@ -13,7 +13,7 @@
 	const DB_CHARSET = "utf8";
 
 	//Para envío de correo
-	const ENVIRONMENT = 1; // Local: 0, Produccón: 1;
+	const ENVIRONMENT = 0; // Local: 0, Produccón: 1;
 
 	//Deliminadores decimal y millar Ej. 24,1989.00
 	const SPD = ".";
@@ -34,22 +34,22 @@
 	//const SECRET = "";
 
 	//Datos envio de correo
-	const NOMBRE_REMITENTE = "Tienda Virtual";
-	const EMAIL_REMITENTE = "no-reply@abelosh.com";
-	const NOMBRE_EMPESA = "Tienda Virtual";
-	const WEB_EMPRESA = "www.abelosh.com";
+	const NOMBRE_REMITENTE = "Angel";
+	const EMAIL_REMITENTE = "gemelo1502@gmail.com";
+	const NOMBRE_EMPESA = "Angel";
+	const WEB_EMPRESA = "www.angel.com";
 
 	const DESCRIPCION = "La mejor tienda en línea con artículos de moda.";
-	const SHAREDHASH = "TiendaVirtual";
+	const SHAREDHASH = "Angel";
 
 	//Datos Empresa
-	const DIRECCION = "Avenida las Américas Zona 13, Guatemala";
-	const TELEMPRESA = "+(502)78787845";
-	const WHATSAPP = "+50278787845";
-	const EMAIL_EMPRESA = "info@abelosh.com";
-	const EMAIL_PEDIDOS = "info@abelosh.com"; 
-	const EMAIL_SUSCRIPCION = "info@abelosh.com";
-	const EMAIL_CONTACTO = "info@abelosh.com";
+	const DIRECCION = "Palacio nacional local 103";
+	const TELEMPRESA = "+573013156292";
+	const WHATSAPP = "+573013156292";
+	const EMAIL_EMPRESA = "info@angel.com";
+	const EMAIL_PEDIDOS = "info@angel.com"; 
+	const EMAIL_SUSCRIPCION = "info@angel.com";
+	const EMAIL_CONTACTO = "info@angel.com";
 
 	const CAT_SLIDER = "1,2,3";
 	const CAT_BANNER = "4,5,6";
@@ -98,8 +98,8 @@
 	const PROBUSCAR = 4;
 
 	//REDES SOCIALES
-	const FACEBOOK = "https://www.facebook.com/abelosh";
-	const INSTAGRAM = "https://www.instagram.com/febel24/";
+	const FACEBOOK = "https://www.facebook.com/Angel";
+	const INSTAGRAM = "https://www.instagram.com/Angel/";
 	
 
  ?>

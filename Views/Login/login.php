@@ -19,7 +19,7 @@
     </section>
     <section class="login-content">
       <div class="logo">
-        <h1><?= $data['page_title']; ?></h1>
+        <img class="logo-login" src="<?= media(); ?>/tienda/images/logo_oscuro.png" alt="Logo Angel">
       </div>
       <div class="login-box">
         <div id="divLoading" >

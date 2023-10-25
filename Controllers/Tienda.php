@@ -244,7 +244,7 @@
 						$dataUsuario = array('nombreUsuario' => $nombreUsuario,
 											 'email' => $strEmail,
 											 'password' => $strPassword,
-											 'asunto' => 'Bienvenido a tu tienda en línea');
+											 'asunto' => 'Bienvenido a tu tienda Angel');
 						$_SESSION['idUser'] = $request_user;
 						$_SESSION['login'] = true;
 						$this->login->sessionLogin($request_user);
@@ -490,7 +490,7 @@
 				if($userContact > 0){
 					$arrResponse = array('status' => true, 'msg' => "Su mensaje fue enviado correctamente.");
 					//Enviar correo
-					$dataUsuario = array('asunto' => "Nueva Usuario en contacto",
+					$dataUsuario = array('asunto' => "Nuevo Usuario en contacto",
 										'email' => EMAIL_CONTACTO,
 										'nombreContacto' => $nombre,
 										'emailContacto' => $email,

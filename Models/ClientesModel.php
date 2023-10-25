@@ -32,7 +32,7 @@ class ClientesModel extends Mysql
 		$this->strNit = $nit;
 		$this->strNomFiscal = $nomFiscal;
 		$this->strDirFiscal = $dirFiscal;
-
+		$this->$intStatus = 1;
 		$return = 0;
 		$sql = "SELECT * FROM persona WHERE 
 				email_user = '{$this->strEmail}' or identificacion = '{$this->strIdentificacion}' ";
@@ -40,8 +40,8 @@ class ClientesModel extends Mysql
 
 		if(empty($request))
 		{
-			$query_insert  = "INSERT INTO persona(identificacion,nombres,apellidos,telefono,email_user,password,rolid,nit,nombrefiscal,direccionfiscal) 
-							  VALUES(?,?,?,?,?,?,?,?,?,?)";
+			$query_insert  = "INSERT INTO persona(identificacion,nombres,apellidos,telefono,email_user,password,rolid,status) 
+							VALUES(?,?,?,?,?,?,?,?)";
         	$arrData = array($this->strIdentificacion,
     						$this->strNombre,
     						$this->strApellido,
@@ -49,9 +49,7 @@ class ClientesModel extends Mysql
     						$this->strEmail,
     						$this->strPassword,
     						$this->intTipoId,
-    						$this->strNit,
-    						$this->strNomFiscal,
-    						$this->strDirFiscal);
+							$this->$intStatus);
         	$request_insert = $this->insert($query_insert,$arrData);
         	$return = $request_insert;
 		}else{

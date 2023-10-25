@@ -27,7 +27,7 @@
         <section id="sPedido" class="invoice">
           <div class="row mb-4">
             <div class="col-6">
-              <h2 class="page-header"><img src="<?= media(); ?>/tienda/images/logo.png" ></h2>
+              <h2 class="page-header"><img width="200" height="170" src="<?= media(); ?>/tienda/images/logo_oscuro.png" ></h2>
             </div>
             <div class="col-6">
               <h5 class="text-right">Fecha: <?= $orden['fecha'] ?></h5>

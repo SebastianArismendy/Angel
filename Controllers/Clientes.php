@@ -29,7 +29,7 @@ class Clientes extends Controllers{
 	public function setCliente(){
 		error_reporting(0);
 		if($_POST){
-			if(empty($_POST['txtIdentificacion']) || empty($_POST['txtNombre']) || empty($_POST['txtApellido']) || empty($_POST['txtTelefono']) || empty($_POST['txtEmail']) || empty($_POST['txtNit']) || empty($_POST['txtNombreFiscal']) || empty($_POST['txtDirFiscal']) )
+			if(empty($_POST['txtIdentificacion']) || empty($_POST['txtNombre']) || empty($_POST['txtApellido']) || empty($_POST['txtTelefono']) || empty($_POST['txtEmail']))
 			{
 				$arrResponse = array("status" => false, "msg" => 'Datos incorrectos.');
 			}else{ 
@@ -39,10 +39,10 @@ class Clientes extends Controllers{
 				$strApellido = ucwords(strClean($_POST['txtApellido']));
 				$intTelefono = intval(strClean($_POST['txtTelefono']));
 				$strEmail = strtolower(strClean($_POST['txtEmail']));
-				$strNit = strClean($_POST['txtNit']);
-				$strNomFiscal = strClean($_POST['txtNombreFiscal']);
-				$strDirFiscal = strClean($_POST['txtDirFiscal']);
-				$intTipoId = 7;
+				$strNit = '';
+				$strNomFiscal = '';
+				$strDirFiscal = '';
+				$intTipoId = 3;
 				$request_user = "";
 				if($idUsuario == 0)
 				{
@@ -86,7 +86,7 @@ class Clientes extends Controllers{
 						$dataUsuario = array('nombreUsuario' => $nombreUsuario,
 											 'email' => $strEmail,
 											 'password' => $strPassword,
-											 'asunto' => 'Bienvenido a tu tienda en línea');
+											 'asunto' => 'Bienvenido a tu tienda Angel');
 						sendEmail($dataUsuario,'email_bienvenida');
 					}else{
 						$arrResponse = array('status' => true, 'msg' => 'Datos Actualizados correctamente.');

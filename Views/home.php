@@ -147,10 +147,6 @@
 			</div>
 		</div>
 
-		<div class="container text-center p-t-80">
-			<hr>
-			<?= $contentPage ?>
-		</div>
 	</section>
 <?php 
 	footerTienda($data);

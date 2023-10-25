@@ -207,9 +207,12 @@ function fntInputFile(){
                     request.open("POST",ajaxUrl,true);
                     request.send(formData);
                     request.onreadystatechange = function(){
+                       
                         if(request.readyState != 4) return;
                         if(request.status == 200){
+                            console.log(request.responseText);
                             let objData = JSON.parse(request.responseText);
+                            debugger
                             if(objData.status){
                                 prevImg.innerHTML = `<img src="${objeto_url}">`;
                                 document.querySelector("#"+parentId+" .btnDeleteImage").setAttribute("imgname",objData.imgname);

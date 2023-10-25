@@ -12,54 +12,6 @@ $tituloTerminos = !empty(getInfoPage(PTERMINOS)) ? getInfoPage(PTERMINOS)['titul
 $infoTerminos = !empty(getInfoPage(PTERMINOS)) ? getInfoPage(PTERMINOS)['contenido'] : "";
 
 ?>
-<script
-    src="https://www.paypal.com/sdk/js?client-id=<?= IDCLIENTE ?>&currency=<?= CURRENCY ?>">
-</script>
-<script>
-  paypal.Buttons({
-    createOrder: function(data, actions) {
-      return actions.order.create({
-        purchase_units: [{
-          amount: {
-            value: <?= $total; ?>
-          },
-          description: "Compra de artículos en <?= NOMBRE_EMPESA ?> por <?= SMONEY.$total ?> ",
-        }]
-      });
-    },
-    onApprove: function(data, actions) {
-      // This function captures the funds from the transaction.
-      return actions.order.capture().then(function(details) {
-      		let base_url = "<?= base_url(); ?>";
-	        let dir = document.querySelector("#txtDireccion").value;
-	        let ciudad = document.querySelector("#txtCiudad").value;
-	        let inttipopago = 1; 
-	        let request = (window.XMLHttpRequest) ? 
-	                    new XMLHttpRequest() : 
-	                    new ActiveXObject('Microsoft.XMLHTTP');
-			let ajaxUrl = base_url+'/Tienda/procesarVenta';
-			let formData = new FormData();
-		    formData.append('direccion',dir);    
-		   	formData.append('ciudad',ciudad);
-			formData.append('inttipopago',inttipopago);
-		   	formData.append('datapay',JSON.stringify(details));
-		   	request.open("POST",ajaxUrl,true);
-		    request.send(formData);
-		    request.onreadystatechange = function(){
-		    	if(request.readyState != 4) return;
-		    	if(request.status == 200){
-		    		let objData = JSON.parse(request.responseText);
-		    		if(objData.status){
-		    			window.location = base_url+"/tienda/confirmarpedido/";
-		    		}else{
-		    			swal("", objData.msg , "error");
-		    		}
-		    	}
-		    }
-      });
-    }
-  }).render('#paypal-btn-container');
-</script>
 
 <!-- Modal -->
 <div class="modal fade" id="modalTerminos" tabindex="-1" aria-hidden="true">
@@ -235,12 +187,6 @@ $infoTerminos = !empty(getInfoPage(PTERMINOS)) ? getInfoPage(PTERMINOS)['conteni
 							</h4>
 							<div class="divmetodpago">
 								<div>
-									<label for="paypal">
-										<input type="radio" id="paypal" class="methodpago" name="payment-method" checked="" value="Paypal">
-										<img src="<?= media()?>/images/img-paypal.jpg" alt="Icono de PayPal" class="ml-space-sm" width="74" height="20">
-									</label>
-								</div>
-								<div>
 									<label for="contraentrega">
 										<input type="radio" id="contraentrega" class="methodpago" name="payment-method" value="CT">
 										<span>Contra Entrega</span>
@@ -267,9 +213,6 @@ $infoTerminos = !empty(getInfoPage(PTERMINOS)) ? getInfoPage(PTERMINOS)['conteni
 									<button type="submit" id="btnComprar" class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">Procesar pedido</button>
 								</div>
 								<div id="divpaypal">
-									<div>
-										<p>Para completar la transacción, te enviaremos a los servidores seguros de PayPal.</p>
-									</div>
 									<br>
 									<div id="paypal-btn-container"></div>
 								</div>

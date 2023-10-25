@@ -139,7 +139,7 @@
 					
 					<!-- Logo desktop -->		
 					<a href="<?= base_url(); ?>" class="logo">
-						<img src="<?= media() ?>/tienda/images/logo.png" alt="Tienda Virtual">
+						<img src="<?= media() ?>/tienda/images/logo_oscuro.png" alt="Logo Angel">
 					</a>
 
 					<!-- Menu desktop -->
@@ -158,12 +158,12 @@
 							</li>
 							
 							<li>
-								<a href="<?= base_url(); ?>/nosotros">Nosotro</a>
+								<a href="<?= base_url(); ?>/nosotros">Nosotros</a>
 							</li>
 
-							<li>
-								<a href="<?= base_url(); ?>/sucursales">Sucursales</a>
-							</li>
+							<!-- <li>
+								<a href="<?= base_url(); ?>/sucursales">Sucursal</a>
+							</li> -->
 
 							<li>
 								<a href="<?= base_url(); ?>/contacto">Contacto</a>
@@ -190,7 +190,7 @@
 		<div class="wrap-header-mobile">
 			<!-- Logo moblie -->		
 			<div class="logo-mobile">
-				<a href="<?= base_url(); ?>"><img src="<?= media() ?>/tienda/images/logo.png" alt="Tienda Virtual"></a>
+				<a href="<?= base_url(); ?>"><img src="<?= media() ?>/tienda/images/logo_oscuro.png" alt="Logo Angel"></a>
 			</div>
 
 			<!-- Icon header -->

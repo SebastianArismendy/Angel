@@ -2660,7 +2660,7 @@ input.num-product::-webkit-inner-spin-button {
 ==================================================================*/
 .bg-none {background-color: transparent;}
 .bg0 {background-color: #fff;}
-.bg1 {background-color: #717fe0;}
+.bg1 {background-color: #222;}
 .bg2 {background-color: #e6e6e6;}
 .bg3 {background-color: #222;}
 .bg5 {background-color: rgba(0,0,0,0.5);}
@@ -3351,4 +3351,43 @@ input.num-product::-webkit-inner-spin-button {
     padding: 20px;
   }
 
+}
+
+
+.menu-desktop .main-menu{
+  margin-bottom: 0;
+}
+
+.logo_admin{
+  width: 75px;
+}
+
+.header-cart-item-delete span{
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.header-cart-item-txt{
+  width: 60%;
+}
+
+.header-cart-item .header-cart-item-img{
+  width: 20%;
+}
+
+.header-cart-item .header-cart-item-img::after{
+  content: '';
+}
+
+.how-itemcart1::after{
+  content: '
+}
+
+.table-shopping-cart th.column-0{
+  color: transparent;
+}
+
+.table-shopping-cart .column-0 span{
+  font-size: 25px;
+  cursor: pointer;
 }

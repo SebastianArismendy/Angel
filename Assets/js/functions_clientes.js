@@ -61,12 +61,9 @@ document.addEventListener('DOMContentLoaded', function(){
             let strApellido = document.querySelector('#txtApellido').value;
             let strEmail = document.querySelector('#txtEmail').value;
             let intTelefono = document.querySelector('#txtTelefono').value;
-            let strNit = document.querySelector('#txtNit').value;
-            let strNomFical = document.querySelector('#txtNombreFiscal').value;
-            let strDirFiscal = document.querySelector('#txtDirFiscal').value;
             let strPassword = document.querySelector('#txtPassword').value;
 
-            if(strIdentificacion == '' || strApellido == '' || strNombre == '' || strEmail == '' || intTelefono == '' || strNit == '' || strDirFiscal == '' || strNomFical=='' )
+            if(strIdentificacion == '' || strApellido == '' || strNombre == '' || strEmail == '' || intTelefono == '' )
             {
                 swal("Atención", "Todos los campos son obligatorios." , "error");
                 return false;
@@ -87,7 +84,9 @@ document.addEventListener('DOMContentLoaded', function(){
             request.send(formData);
             request.onreadystatechange = function(){
                 if(request.readyState == 4 && request.status == 200){
+                    console.log(request);
                     let objData = JSON.parse(request.responseText);
+
                     if(objData.status)
                     {
                         if(rowTable == ""){
@@ -132,9 +131,6 @@ function fntViewInfo(idpersona){
                 document.querySelector("#celApellido").innerHTML = objData.data.apellidos;
                 document.querySelector("#celTelefono").innerHTML = objData.data.telefono;
                 document.querySelector("#celEmail").innerHTML = objData.data.email_user;
-                document.querySelector("#celIde").innerHTML = objData.data.nit;
-                document.querySelector("#celNomFiscal").innerHTML = objData.data.nombrefiscal;
-                document.querySelector("#celDirFiscal").innerHTML = objData.data.direccionfiscal;
                 document.querySelector("#celFechaRegistro").innerHTML = objData.data.fechaRegistro; 
                 $('#modalViewCliente').modal('show');
             }else{
@@ -166,9 +162,6 @@ function fntEditInfo(element, idpersona){
                 document.querySelector("#txtApellido").value = objData.data.apellidos;
                 document.querySelector("#txtTelefono").value = objData.data.telefono;
                 document.querySelector("#txtEmail").value = objData.data.email_user;
-                document.querySelector("#txtNit").value =objData.data.nit;
-                document.querySelector("#txtNombreFiscal").value =objData.data.nombrefiscal;
-                document.querySelector("#txtDirFiscal").value =objData.data.direccionfiscal;
             }
         }
         $('#modalFormCliente').modal('show');

@@ -16634,10 +16634,12 @@ be a descendant of the grid when it is being dragged.
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  background-image: url(../images/banner.jpg);
-  background-size: cover;
+  background-image: url(../tienda/images/logo_oscuro.png);
+  background-size: contain;
   background-position: center;
   min-height: 300px;
+  background-color: white;
+  background-repeat: no-repeat;
 }
 
 .user .user-tabs {
@@ -16734,3 +16736,19 @@ be a descendant of the grid when it is being dragged.
 .user .user-settings label {
   color: #666;
 }
+
+.logo_admin{
+  width: 75px;
+}
+
+.logo-login{
+  width: 250px;
+}
+
+.app-nav .dropdown{
+  margin-top: 6px;
+}
+
+/* #containerGallery{
+  display: block!important;
+} */

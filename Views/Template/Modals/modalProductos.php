@@ -29,7 +29,7 @@
                         <label class="control-label">Código <span class="required">*</span></label>
                         <input class="form-control" id="txtCodigo" name="txtCodigo" type="text" placeholder="Código de barra" required="">
                         <br>
-                        <div id="divBarCode" class="notblock textcenter">
+                        <div id="divBarCode" class="textcenter">
                             <div id="printCode">
                                 <svg id="barcode"></svg> 
                             </div>
@@ -89,8 +89,8 @@
                              <input type="file" name="foto" id="img1" class="inputUploadfile">
                              <label for="img1" class="btnUploadfile"><i class="fas fa-upload "></i></label>
                              <button class="btnDeleteImage" type="button" onclick="fntDelItem('div24')"><i class="fas fa-trash-alt"></i></button>
-                         </div>
-                         <div id="div24">
+                         </div> -->
+                         <!-- <div id="div24">
                              <div class="prevImage">
                                  <img class="loading" src="<?= media(); ?>/images/loading.svg">
                              </div>

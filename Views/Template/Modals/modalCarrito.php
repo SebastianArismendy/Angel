@@ -9,7 +9,7 @@ if(isset($_SESSION['arrCarrito']) and count($_SESSION['arrCarrito']) > 0){
 	$idProducto = openssl_encrypt($producto['idproducto'],METHODENCRIPT,KEY);	
  ?>	
 	<li class="header-cart-item flex-w flex-t m-b-12">
-		<div class="header-cart-item-img" idpr="<?= $idProducto ?>" op="1" onclick="fntdelItem(this)">
+		<div class="header-cart-item-img">
 			<img src="<?= $producto['imagen'] ?>" alt="<?= $producto['producto'] ?>">
 		</div>
 		<div class="header-cart-item-txt p-t-8">
@@ -19,6 +19,10 @@ if(isset($_SESSION['arrCarrito']) and count($_SESSION['arrCarrito']) > 0){
 			<span class="header-cart-item-info">
 				<?= $producto['cantidad'].' x '.SMONEY.formatMoney($producto['precio']) ?>
 			</span>
+			
+		</div>
+		<div class="header-cart-item-delete">
+			<span idpr="<?= $idProducto ?>" op="1" onclick="fntdelItem(this)"><i class="zmdi zmdi-delete"></i></span>
 		</div>
 	</li>
 <?php } ?>

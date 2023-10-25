@@ -29,11 +29,13 @@ if(isset($_SESSION['arrCarrito']) and count($_SESSION['arrCarrito']) > 0){
 						<div class="wrap-table-shopping-cart">
 							<table id="tblCarrito" class="table-shopping-cart">
 								<tr class="table_head">
+									<th class="column-0" align="center">Acción</th>
 									<th class="column-1">Producto</th>
 									<th class="column-2"></th>
 									<th class="column-3">Precio</th>
 									<th class="column-4">Cantidad</th>
 									<th class="column-5">Total</th>
+									<!-- <th class="column-6">Acción</th> -->
 								</tr>
 							<?php 
 								foreach ($_SESSION['arrCarrito'] as $producto) {
@@ -43,8 +45,12 @@ if(isset($_SESSION['arrCarrito']) and count($_SESSION['arrCarrito']) > 0){
 								
 							 ?>
 								<tr class="table_row <?= $idProducto ?>">
+									<td class="column-0"  align="center">
+										<span idpr="<?= $idProducto ?>" op="2" onclick="fntdelItem(this)" ><i class="zmdi zmdi-delete"></i></span>
+									</td>
 									<td class="column-1">
-										<div class="how-itemcart1" idpr="<?= $idProducto ?>" op="2" onclick="fntdelItem(this)" >
+		
+										<div class="how-itemcart1" >
 											<img src="<?= $producto['imagen'] ?>" alt="<?= $producto['producto'] ?>">
 										</div>
 									</td>
@@ -66,6 +72,7 @@ if(isset($_SESSION['arrCarrito']) and count($_SESSION['arrCarrito']) > 0){
 										</div>
 									</td>
 									<td class="column-5"><?= SMONEY.formatMoney($totalProducto) ?></td>
+									
 								</tr>
 							<?php } ?>
 
